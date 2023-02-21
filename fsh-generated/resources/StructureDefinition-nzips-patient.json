@@ -1,0 +1,220 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "nzips-patient",
+  "url": "https://standards.digital.health.nz/fhir/StructureDefinition/nzips-patient",
+  "version": "0.1.0",
+  "name": "NZIPS-Patient",
+  "status": "active",
+  "description": "NZ International Patient Summary patient resource. This profile derives from the [International Patient summary](https://build.fhir.org/ig/HL7/fhir-ips/) with localisations using international and NZ Government standards for the NZ context.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "cda",
+      "uri": "http://hl7.org/v3/cda",
+      "name": "CDA (R2)"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "loinc",
+      "uri": "http://loinc.org",
+      "name": "LOINC code for the element"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Patient",
+  "baseDefinition": "http://hl7.org/fhir/uv/ips/StructureDefinition/Patient-uv-ips",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Patient",
+        "path": "Patient",
+        "constraint": [
+          {
+            "key": "nz-pat-1",
+            "severity": "error",
+            "human": "only a single official NHI",
+            "expression": "Patient.identifier.where(system='https://standards.digital.health.nz/ns/nhi-id' and use='official').count() < 2",
+            "source": "https://standards.digital.health.nz/fhir/StructureDefinition/nzips-patient"
+          }
+        ]
+      },
+      {
+        "id": "Patient.extension",
+        "path": "Patient.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Patient.extension:ethnicity",
+        "path": "Patient.extension",
+        "sliceName": "ethnicity",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.nz/fhir/StructureDefinition/nz-ethnicity"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Patient.extension:maori-descent",
+        "path": "Patient.extension",
+        "sliceName": "maori-descent",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.nz/fhir/StructureDefinition/maori-descent"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Patient.extension:iwi",
+        "path": "Patient.extension",
+        "sliceName": "iwi",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.nz/fhir/StructureDefinition/nz-iwi"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Patient.extension:birth-country",
+        "path": "Patient.extension",
+        "sliceName": "birth-country",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.nz/fhir/StructureDefinition/country-of-birth"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Patient.identifier",
+        "path": "Patient.identifier",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open",
+          "description": "NHI number"
+        }
+      },
+      {
+        "id": "Patient.identifier:NHI",
+        "path": "Patient.identifier",
+        "sliceName": "NHI",
+        "short": "The currently active NHI ",
+        "definition": "The NHI number is a unique number for all New Zealanders, assigned at birth",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier:NHI.use",
+        "path": "Patient.identifier.use",
+        "short": "fixed to official",
+        "fixedCode": "offical"
+      },
+      {
+        "id": "Patient.identifier:NHI.system",
+        "path": "Patient.identifier.system",
+        "min": 1,
+        "fixedUri": "https://standards.digital.health.nz/ns/nhi-id"
+      },
+      {
+        "id": "Patient.identifier:dormant",
+        "path": "Patient.identifier",
+        "sliceName": "dormant",
+        "short": "NHI identifiers that have been deprecated for this Person",
+        "definition": "An NHI of the person that is no longer in use.   An NHI becomes dormant when it is discovered that 2 NHIs exist for the same person. The NHIs are linked, one becomes ‘live’ the other ‘dormant’.",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier:dormant.use",
+        "path": "Patient.identifier.use",
+        "short": "fixed to old",
+        "fixedCode": "old"
+      },
+      {
+        "id": "Patient.identifier:dormant.system",
+        "path": "Patient.identifier.system",
+        "min": 1,
+        "fixedUri": "https://standards.digital.health.nz/ns/nhi-id"
+      },
+      {
+        "id": "Patient.gender.extension",
+        "path": "Patient.gender.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Patient.gender.extension:originalText",
+        "path": "Patient.gender.extension",
+        "sliceName": "originalText",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/originalText"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

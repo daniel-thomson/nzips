@@ -1,0 +1,46 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "nzips-medicationstatement",
+  "url": "https://standards.digital.health.nz/fhir/StructureDefinition/nzips-medicationstatement",
+  "version": "0.1.0",
+  "name": "NZIPS-MedicationStatement",
+  "title": "NZIPS MedicationStatement",
+  "status": "active",
+  "description": "A record of medication being taken is represented in the patient summary as an instance of an MedicationStatement resource constrained by this profile. Based on the IPS profile.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationStatement",
+  "baseDefinition": "http://hl7.org/fhir/uv/ips/StructureDefinition/MedicationStatement-uv-ips",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MedicationStatement",
+        "path": "MedicationStatement"
+      }
+    ]
+  }
+}
