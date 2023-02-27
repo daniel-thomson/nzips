@@ -78,6 +78,7 @@ dependencies:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
+  Use cases: usecases.html
   Profiles: artifacts.html#structures-resource-profiles
   Extensions: artifacts.html#structures-extension-definitions
   Terminology: artifacts.html#terminology-value-sets
