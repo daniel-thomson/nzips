@@ -78,7 +78,16 @@ dependencies:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
-  Artifacts: artifacts.html
+  Profiles: artifacts.html#structures-resource-profiles
+  Extensions: artifacts.html#structures-extension-definitions
+  Terminology: artifacts.html#terminology-value-sets
+  All Artifacts: artifacts.html
+  Support: 
+    FHIR Spec: new-tab https://hl7.org/fhir/index.html
+    FHIR IPS: new-tab https://hl7.org/fhir/uv/ips/index.html
+    Artefacts (JSON): definitions.json.zip
+    Artefacts (XML): definitions.xml.zip
+    Download IG: full-ig.zip
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │

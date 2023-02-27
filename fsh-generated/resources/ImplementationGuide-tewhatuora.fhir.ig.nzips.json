@@ -41,10 +41,26 @@
     "resource": [
       {
         "reference": {
-          "reference": "StructureDefinition/nzips-medicationstatement"
+          "reference": "StructureDefinition/nzips-allergyintolerance"
         },
-        "name": "NZIPS MedicationStatement",
-        "description": "A record of medication being taken is represented in the patient summary as an instance of an MedicationStatement resource constrained by this profile. Based on the IPS profile.",
+        "name": "NZIPS-AllergyIntolerance",
+        "description": " A record of a clinical assessment of an allergy or intolerance; a propensity, or a potential risk to an individual, to have an adverse reaction on future exposure to the specified substance, or class of substance.\n\nWhere a propensity is identified, to record information or evidence about a reaction event that is characterized by any harmful or undesirable physiological response that is specific to the individual and triggered by exposure of an individual to the identified substance or class of substance. ",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/nzips-diagnostic-report"
+        },
+        "name": "NZIPS-DiagnosticReport",
+        "description": "This profile constrains the DiagnosticReport resource to represent diagnostic test and procedure reports in a patient summary.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/nzips-immunization"
+        },
+        "name": "NZIPS-Immunization",
+        "description": "Describes the event of a patient being administered a vaccine or a record of an immunization as reported by a patient, a clinician or another party.",
         "exampleBoolean": false
       },
       {
@@ -61,6 +77,38 @@
         },
         "name": "NZIPS-Problem",
         "description": "NZ IPS problem (FHIR Condition resource). This profile derives from the [International Patient Summary](https://build.fhir.org/ig/HL7/fhir-ips/) Condition resource used to document a health problem, with localisations using international and NZ Government standards for the NZ context.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/nzips-smokingstatus"
+        },
+        "name": "NZIPS-SmokingStatus",
+        "description": "This profile constrains the Observation resource to represent Tobacco use assessment in a patient summary.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/nzips-vapingstatus"
+        },
+        "name": "NZIPS-VapingStatus",
+        "description": "This profile constrains the Observation resource to represent Vaping use in a patient summary.\n\n* Change binding to snomed ct nz vaping status",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/nzips-vitalsigns"
+        },
+        "name": "NZIPS-VitalSigns",
+        "description": "This profile is based on the R4 VitalSigns profile.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/nzips-medicationstatement"
+        },
+        "name": "NZIPS-MedicationStatement",
+        "description": "A record of medication being taken is represented in the patient summary as an instance of an MedicationStatement resource constrained by this profile. Based on the IPS profile.",
         "exampleBoolean": false
       },
       {

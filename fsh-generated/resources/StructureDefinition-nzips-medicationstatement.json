@@ -3,8 +3,8 @@
   "id": "nzips-medicationstatement",
   "url": "https://standards.digital.health.nz/fhir/StructureDefinition/nzips-medicationstatement",
   "version": "0.1.0",
-  "name": "NZIPS-MedicationStatement",
-  "title": "NZIPS MedicationStatement",
+  "name": "NZIPSMedicationStatement",
+  "title": "NZIPS-MedicationStatement",
   "status": "active",
   "description": "A record of medication being taken is represented in the patient summary as an instance of an MedicationStatement resource constrained by this profile. Based on the IPS profile.",
   "fhirVersion": "4.0.1",
@@ -38,8 +38,83 @@
   "differential": {
     "element": [
       {
-        "id": "MedicationStatement",
-        "path": "MedicationStatement"
+        "id": "MedicationStatement.medicationCodeableConcept",
+        "path": "MedicationStatement.medicationCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept",
+            "profile": [
+              "http://hl7.org/fhir/uv/ips/StructureDefinition/CodeableConcept-uv-ips"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.medicationCodeableConcept.coding",
+        "path": "MedicationStatement.medicationCodeableConcept.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "MedicationStatement.medicationCodeableConcept.coding:NZMT",
+        "path": "MedicationStatement.medicationCodeableConcept.coding",
+        "sliceName": "NZMT",
+        "short": "New Zealand Medicines Terminology",
+        "min": 0,
+        "max": "*",
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "http://nzmt.org.nz/vs"
+        }
+      },
+      {
+        "id": "MedicationStatement.medicationCodeableConcept.coding:NZMT.extension:nzf-nzmt-tpe",
+        "path": "MedicationStatement.medicationCodeableConcept.coding.extension",
+        "sliceName": "nzf-nzmt-tpe",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org.nz/fhir/StructureDefinition/nzf-nzmt-type"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.medicationCodeableConcept.coding:NZMT.system",
+        "path": "MedicationStatement.medicationCodeableConcept.coding.system",
+        "min": 1,
+        "fixedUri": "http://nzmt.org.nz/vs"
+      },
+      {
+        "id": "MedicationStatement.medicationCodeableConcept.coding:GTIN",
+        "path": "MedicationStatement.medicationCodeableConcept.coding",
+        "sliceName": "GTIN",
+        "short": "Medication Package Global Trade Item Number (GTIN)",
+        "comment": "GTIN value from http://www.gs1.org/gtin.",
+        "min": 0,
+        "max": "*",
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "http://terminology.hl7.org/ValueSet/v3-GTIN"
+        }
+      },
+      {
+        "id": "MedicationStatement.medicationCodeableConcept.coding:GTIN.system",
+        "path": "MedicationStatement.medicationCodeableConcept.coding.system",
+        "min": 1,
+        "fixedUri": "http://www.gs1.org/gtin"
       }
     ]
   }
