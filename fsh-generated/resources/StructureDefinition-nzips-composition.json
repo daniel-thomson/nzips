@@ -1,0 +1,51 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "nzips-composition",
+  "url": "https://standards.digital.health.nz/fhir/StructureDefinition/nzips-composition",
+  "version": "0.1.0",
+  "name": "NZIPS-Composition",
+  "title": "NZIPS-Composition",
+  "status": "active",
+  "description": "Clinical document used to represent the NZIPS data set. It is an electronic health record extract containing essential healthcare information about a subject of care. The NZIPS dataset is minimal and non-exhaustive; specialty-agnostic and condition-independent; but still clinically relevant.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "cda",
+      "uri": "http://hl7.org/v3/cda",
+      "name": "CDA (R2)"
+    },
+    {
+      "identity": "fhirdocumentreference",
+      "uri": "http://hl7.org/fhir/documentreference",
+      "name": "FHIR DocumentReference"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Composition",
+  "baseDefinition": "http://hl7.org/fhir/uv/ips/StructureDefinition/Composition-uv-ips",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Composition",
+        "path": "Composition"
+      }
+    ]
+  }
+}
