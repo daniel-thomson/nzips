@@ -15,24 +15,22 @@ Title: "Māori Descent"
 Description: "A code indicating whether a person is of Māori descent"
 * ^url = "https://nzhts.digital.health.nz/fhir/ValueSet/maori-descent"
 
-* codes from system https://standards.digital.health.nz/ns/maori-descent
+* codes from system https://standards.digital.health.nz/ns/maori-descent-code
 * ^version = "1.0.0"
 
 CodeSystem: MaoriDescent
 Id: maori-descent-codesystem
 Title: "Māori Descent"
 Description: "NZ Māori Descent Statistical Standard: 09 Dec 1998."
-* ^url = "https://standards.digital.health.nz/ns/maori-descent"
+* ^url = "https://standards.digital.health.nz/ns/maori-descent-code"
 * ^version = "1.0.0"
 * ^status = #active
 * ^publisher = "Stats NZ"
-* ^contact.telecom.system = #email
 * ^copyright = "© 2017+ Stats NZ"
 * ^caseSensitive = true
 * ^valueSet = "https://nzhts.digital.health.nz/fhir/ValueSet/maori-descent"
 * ^compositional = false
 * ^versionNeeded = false
-//* ^content = #complete
 
 * #1 "Māori Descent"
 * #2 "No Māori Descent"
