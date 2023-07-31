@@ -2,9 +2,8 @@
   "resourceType": "StructureDefinition",
   "id": "nzips-patient",
   "url": "https://standards.digital.health.nz/fhir/StructureDefinition/nzips-patient",
-  "version": "0.1.0",
   "name": "NZIPS-Patient",
-  "status": "active",
+  "status": "draft",
   "description": "NZ International Patient Summary patient resource. This profile derives from the [International Patient summary](https://build.fhir.org/ig/HL7/fhir-ips/) with localisations using international and NZ Government standards for the NZ context.",
   "fhirVersion": "4.0.1",
   "mapping": [
@@ -48,7 +47,7 @@
           {
             "key": "nz-pat-1",
             "severity": "error",
-            "human": "only a single official NHI",
+            "human": "Can only a single official NHI",
             "expression": "Patient.identifier.where(system='https://standards.digital.health.nz/ns/nhi-id' and use='official').count() < 2",
             "source": "https://standards.digital.health.nz/fhir/StructureDefinition/nzips-patient"
           }

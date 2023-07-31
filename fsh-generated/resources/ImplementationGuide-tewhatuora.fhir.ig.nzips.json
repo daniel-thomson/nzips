@@ -41,6 +41,38 @@
     "resource": [
       {
         "reference": {
+          "reference": "StructureDefinition/country-of-birth"
+        },
+        "name": "CountryOfBirth",
+        "description": "Code for the person's country of birth as an ISO 3166-1-2-alpha code",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/maori-descent-code"
+        },
+        "name": "MaoriDescent",
+        "description": "Code indicting whether the person is of Māori descent",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/maori-descent-valueset"
+        },
+        "name": "Māori Descent",
+        "description": "A code indicating whether a person is of Māori descent",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/maori-descent-codesystem"
+        },
+        "name": "Māori Descent",
+        "description": "Codes for classifying Māori descent. Defined by Stats NZ - Census Māori descent v2.0.0",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/nzips-allergyintolerance"
         },
         "name": "NZIPS-AllergyIntolerance",
@@ -85,6 +117,14 @@
         },
         "name": "NZIPS-Immunization",
         "description": "Describes the event of a patient being administered a vaccine or a record of an immunization as reported by a patient, a clinician or another party.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/nzips-medicationstatement"
+        },
+        "name": "NZIPS-MedicationStatement",
+        "description": "A record of medication being taken is represented in the patient summary as an instance of an MedicationStatement resource constrained by this profile. Based on the IPS profile.",
         "exampleBoolean": false
       },
       {
@@ -157,46 +197,6 @@
         },
         "name": "NZIPS-VitalSigns",
         "description": "This profile is based on the R4 VitalSigns profile.",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/nzips-medicationstatement"
-        },
-        "name": "NZIPS-MedicationStatement",
-        "description": "A record of medication being taken is represented in the patient summary as an instance of an MedicationStatement resource constrained by this profile. Based on the IPS profile.",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/country-of-birth"
-        },
-        "name": "CountryOfBirth",
-        "description": "Code for the person's country of birth as an ISO 3166-1-2-alpha code",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/maori-descent-code"
-        },
-        "name": "MaoriDescent",
-        "description": "Code indicting whether the person is of Māori descent",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "ValueSet/maori-descent-valueset"
-        },
-        "name": "Māori Descent",
-        "description": "A code indicating whether a person is of Māori descent",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "CodeSystem/maori-descent-codesystem"
-        },
-        "name": "Māori Descent",
-        "description": "NZ Māori Descent Statistical Standard: 09 Dec 1998.",
         "exampleBoolean": false
       }
     ],

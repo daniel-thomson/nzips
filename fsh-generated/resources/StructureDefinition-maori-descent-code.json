@@ -2,9 +2,8 @@
   "resourceType": "StructureDefinition",
   "id": "maori-descent-code",
   "url": "http://hl7.org.nz/fhir/StructureDefinition/maori-descent",
-  "version": "0.1.0",
   "name": "MaoriDescent",
-  "status": "active",
+  "status": "draft",
   "description": "Code indicting whether the person is of Māori descent",
   "fhirVersion": "4.0.1",
   "mapping": [
@@ -45,27 +44,11 @@
       {
         "id": "Extension.value[x]",
         "path": "Extension.value[x]",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "type",
-              "path": "$this"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        },
         "type": [
           {
             "code": "CodeableConcept"
           }
-        ]
-      },
-      {
-        "id": "Extension.valueCodeableConcept",
-        "path": "Extension.valueCodeableConcept",
-        "min": 0,
-        "max": "1",
+        ],
         "binding": {
           "strength": "preferred",
           "valueSet": "https://nzhts.digital.health.nz/fhir/ValueSet/maori-descent"

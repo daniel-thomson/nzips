@@ -1,16 +1,6 @@
 {
   "resourceType": "StructureDefinition",
   "id": "nzips-encounter",
-  "extension": [
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
-      "valueString": "Base.Management"
-    },
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
-      "valueCode": "patient"
-    }
-  ],
   "url": "https://standards.digital.health.nz/fhir/StructureDefinition/nzips-encounter",
   "version": "0.1.0",
   "name": "NZIPS-Encounter",

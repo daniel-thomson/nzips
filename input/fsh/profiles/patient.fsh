@@ -48,5 +48,5 @@ Description: "NZ International Patient Summary patient resource. This profile de
 Invariant: nz-pat-1
 Expression: "Patient.identifier.where(system='https://standards.digital.health.nz/ns/nhi-id' and use='official').count() < 2"
 Severity: #error
-Description: "only a single official NHI"
+Description: "A patient can only have a single official NHI"
 

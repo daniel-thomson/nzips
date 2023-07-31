@@ -38,8 +38,23 @@
   "differential": {
     "element": [
       {
-        "id": "MedicationStatement.medicationCodeableConcept",
-        "path": "MedicationStatement.medicationCodeableConcept",
+        "id": "MedicationStatement.medication[x]",
+        "path": "MedicationStatement.medication[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "MedicationStatement.medication[x]:medicationCodeableConcept",
+        "path": "MedicationStatement.medication[x]",
+        "sliceName": "medicationCodeableConcept",
         "min": 0,
         "max": "1",
         "type": [
@@ -52,8 +67,8 @@
         ]
       },
       {
-        "id": "MedicationStatement.medicationCodeableConcept.coding",
-        "path": "MedicationStatement.medicationCodeableConcept.coding",
+        "id": "MedicationStatement.medication[x]:medicationCodeableConcept.coding",
+        "path": "MedicationStatement.medication[x].coding",
         "slicing": {
           "discriminator": [
             {
@@ -65,8 +80,8 @@
         }
       },
       {
-        "id": "MedicationStatement.medicationCodeableConcept.coding:NZMT",
-        "path": "MedicationStatement.medicationCodeableConcept.coding",
+        "id": "MedicationStatement.medication[x]:medicationCodeableConcept.coding:NZMT",
+        "path": "MedicationStatement.medication[x].coding",
         "sliceName": "NZMT",
         "short": "New Zealand Medicines Terminology",
         "min": 0,
@@ -77,8 +92,8 @@
         }
       },
       {
-        "id": "MedicationStatement.medicationCodeableConcept.coding:NZMT.extension:nzf-nzmt-tpe",
-        "path": "MedicationStatement.medicationCodeableConcept.coding.extension",
+        "id": "MedicationStatement.medication[x]:medicationCodeableConcept.coding:NZMT.extension:nzf-nzmt-tpe",
+        "path": "MedicationStatement.medication[x].coding.extension",
         "sliceName": "nzf-nzmt-tpe",
         "min": 0,
         "max": "1",
@@ -92,14 +107,14 @@
         ]
       },
       {
-        "id": "MedicationStatement.medicationCodeableConcept.coding:NZMT.system",
-        "path": "MedicationStatement.medicationCodeableConcept.coding.system",
+        "id": "MedicationStatement.medication[x]:medicationCodeableConcept.coding:NZMT.system",
+        "path": "MedicationStatement.medication[x].coding.system",
         "min": 1,
         "fixedUri": "http://nzmt.org.nz/vs"
       },
       {
-        "id": "MedicationStatement.medicationCodeableConcept.coding:GTIN",
-        "path": "MedicationStatement.medicationCodeableConcept.coding",
+        "id": "MedicationStatement.medication[x]:medicationCodeableConcept.coding:GTIN",
+        "path": "MedicationStatement.medication[x].coding",
         "sliceName": "GTIN",
         "short": "Medication Package Global Trade Item Number (GTIN)",
         "comment": "GTIN value from http://www.gs1.org/gtin.",
@@ -111,8 +126,8 @@
         }
       },
       {
-        "id": "MedicationStatement.medicationCodeableConcept.coding:GTIN.system",
-        "path": "MedicationStatement.medicationCodeableConcept.coding.system",
+        "id": "MedicationStatement.medication[x]:medicationCodeableConcept.coding:GTIN.system",
+        "path": "MedicationStatement.medication[x].coding.system",
         "min": 1,
         "fixedUri": "http://www.gs1.org/gtin"
       }

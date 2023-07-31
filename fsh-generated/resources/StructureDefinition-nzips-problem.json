@@ -2,9 +2,8 @@
   "resourceType": "StructureDefinition",
   "id": "nzips-problem",
   "url": "https://standards.digital.health.nz/fhir/StructureDefinition/nzips-patient",
-  "version": "0.1.0",
   "name": "NZIPS-Problem",
-  "status": "active",
+  "status": "draft",
   "description": "NZ IPS problem (FHIR Condition resource). This profile derives from the [International Patient Summary](https://build.fhir.org/ig/HL7/fhir-ips/) Condition resource used to document a health problem, with localisations using international and NZ Government standards for the NZ context.",
   "fhirVersion": "4.0.1",
   "mapping": [

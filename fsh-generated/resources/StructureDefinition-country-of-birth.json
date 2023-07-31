@@ -2,9 +2,8 @@
   "resourceType": "StructureDefinition",
   "id": "country-of-birth",
   "url": "http://hl7.org.nz/fhir/StructureDefinition/country-of-birth",
-  "version": "0.1.0",
   "name": "CountryOfBirth",
-  "status": "active",
+  "status": "draft",
   "description": "Code for the person's country of birth as an ISO 3166-1-2-alpha code",
   "fhirVersion": "4.0.1",
   "mapping": [
@@ -45,27 +44,11 @@
       {
         "id": "Extension.value[x]",
         "path": "Extension.value[x]",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "type",
-              "path": "$this"
-            }
-          ],
-          "ordered": false,
-          "rules": "open"
-        },
         "type": [
           {
             "code": "CodeableConcept"
           }
-        ]
-      },
-      {
-        "id": "Extension.valueCodeableConcept",
-        "path": "Extension.valueCodeableConcept",
-        "min": 0,
-        "max": "1",
+        ],
         "binding": {
           "strength": "preferred",
           "valueSet": "http://hl7.org/fhir/ValueSet/iso3166-1-2"
